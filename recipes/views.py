@@ -3,7 +3,8 @@ from django.http import HttpResponse
 
 
 def home(request):
-    return HttpResponse('HOME')
+    return render(request,'recipes/home.html', context={
+                  'name': 'Flavio ',})
 
 def contato(request):
     return HttpResponse('Contato')
