@@ -20,16 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-xn5$1n(t#t%zm+sl@dfj_)!j=kd(p96dc)&suba5%ump%#s=@1'
+SECRET_KEY = 'django-insecure-xn5$1n(t#t%zm+sl@dfj_)!j=kd(p96dc)&suba5%ump%#s=@1'  # noqa: E501
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS: list[str] = []
 
 # Application definition
-''
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -88,18 +88,10 @@ DATABASES = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',},  # noqa E501
+    {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator' , },  # noqa E501
+    {'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',},  # noqa E501
+    {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',},  # noqa E501
 ]
 
 
@@ -120,13 +112,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'base_static', 
-]
+    BASE_DIR / 'base_static', ]
 STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
-
 
 
 # Default primary key field type
